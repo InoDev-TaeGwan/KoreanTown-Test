@@ -25,7 +25,7 @@ const City = () => {
   return (
     <NoneColor>
       <MainHeader>
-        <Header />
+        <Header main />
       </MainHeader>
       <MainBody>
         <CityBerlin />

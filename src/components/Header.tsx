@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {VFC} from 'react';
 import styled from '@emotion/native';
 import HeaderIcon from '../assets/icons/HeaderIcon';
 import Menu from '../assets/icons/Menu';
@@ -13,16 +13,34 @@ const IconContainer = styled.View`
   height: 50px;
 `;
 
-const Header = () => {
+interface Props {
+  main: boolean;
+}
+
+const Header: VFC<Props> = ({main}) => {
   return (
-    <Container>
-      <IconContainer>
-        <Menu />
-      </IconContainer>
-      <IconContainer>
-        <HeaderIcon />
-      </IconContainer>
-    </Container>
+    <>
+      {main ? (
+        <Container>
+          <IconContainer>
+            <Menu />
+          </IconContainer>
+          <IconContainer>
+            <HeaderIcon />
+          </IconContainer>
+        </Container>
+      ) : (
+        <Container>
+          <IconContainer>
+            <Menu />
+            <Menu />
+          </IconContainer>
+          <IconContainer>
+            <HeaderIcon />
+          </IconContainer>
+        </Container>
+      )}
+    </>
   );
 };
 
