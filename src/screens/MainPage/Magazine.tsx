@@ -1,37 +1,96 @@
 import React from 'react';
 import styled from '@emotion/native';
-import {Text, Image} from 'react-native';
+import {Text, Image, View} from 'react-native';
 import Header from '../../components/Header';
 import images from '../../assets/images/BerlinBG.jpg';
+import Layout from '../../components/Layout';
+import MapMarker from '../../assets/icons/MapMarker';
 
 const Container = styled.ImageBackground`
   flex: 1;
 `;
 const MainHeader = styled.View`
-  padding-top: 30px;
   flex: 1;
   justify-content: center;
   border: 1px solid red;
+  margin-top: 35px;
 `;
 const MainBody = styled.View`
   flex: 10;
-  align-items: center;
-  justify-content: center;
   border: 1px solid blue;
+`;
+const ContentBox = styled.View`
+  margin: 50px 0 0 20px;
+`;
+const HashTagContainer = styled.View`
+  flex-direction: row;
+  margin-bottom: 20px;
+`;
+const MagazineTitle = styled.View`
+  margin-bottom: 30px;
+`;
+const Title = styled.Text`
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+
+  &:first-child {
+    margin-bottom: 10px;
+  }
+`;
+const HashTag = styled.Text`
+  margin-right: 20px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+`;
+const SpotContainer = styled.View`
+  flex-direction: row;
+  align-items: center;
+`;
+
+const Icon = styled.View`
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+`;
+const SpotName = styled.Text`
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
 `;
 
 const image = Image.resolveAssetSource(images).uri; // 백그라운드 이미지 설정
 
 const Magazine = () => {
   return (
-    <Container source={{uri: image}}>
-      <MainHeader>
-        <Header magazine />
-      </MainHeader>
-      <MainBody>
-        <Text>Magazine</Text>
-      </MainBody>
-    </Container>
+    <Layout notchNone>
+      <Container source={{uri: image}}>
+        <MainHeader>
+          <Header magazine />
+        </MainHeader>
+        <MainBody>
+          <ContentBox>
+            <MagazineTitle>
+              <Title>LA에서 즐기는</Title>
+              <Title>한옥 카페</Title>
+            </MagazineTitle>
+            <HashTagContainer>
+              <HashTag>#레트로</HashTag>
+              <HashTag>#카페</HashTag>
+              <HashTag>#전통</HashTag>
+              <HashTag>#데이트코스</HashTag>
+            </HashTagContainer>
+            <SpotContainer>
+              <Icon>
+                <MapMarker color="#fff" />
+              </Icon>
+              <SpotName>LA</SpotName>
+            </SpotContainer>
+          </ContentBox>
+        </MainBody>
+      </Container>
+    </Layout>
   );
 };
 
