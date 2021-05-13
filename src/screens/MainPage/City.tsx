@@ -12,6 +12,7 @@ const MainHeader = styled.View`
   flex: 1;
   justify-content: center;
   border: 1px solid red;
+  padding-top: 30px;
 `;
 
 const MainBody = styled.View`
@@ -25,7 +26,7 @@ const City = () => {
   return (
     <NoneColor>
       <MainHeader>
-        <Header />
+        <Header main />
       </MainHeader>
       <MainBody>
         <CityBerlin />

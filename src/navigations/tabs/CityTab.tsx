@@ -14,33 +14,35 @@ const Tab = createBottomTabNavigator();
 
 const CityTab = () => {
   return (
-    <Tab.Navigator>
-      <Tab.Screen
-        name="City"
-        component={City}
-        options={{
-          tabBarLabel: '',
-          tabBarIcon: ({focused}) =>
-            focused ? <LibrarySharp /> : <LibraryOutline />,
-        }}
-      />
-      <Tab.Screen
-        name="Home"
-        component={City}
-        options={{
-          tabBarLabel: '',
-          tabBarIcon: () => <ArrowsSolid />,
-        }}
-      />
-      <Tab.Screen
-        name="Login"
-        component={Login}
-        options={{
-          tabBarLabel: '',
-          tabBarIcon: ({focused}) => (focused ? <Grid /> : <GridOutline />),
-        }}
-      />
-    </Tab.Navigator>
+    <>
+      <Tab.Navigator>
+        <Tab.Screen
+          name="City"
+          component={City}
+          options={{
+            tabBarLabel: '',
+            tabBarIcon: ({focused}) =>
+              focused ? <LibrarySharp /> : <LibraryOutline />,
+          }}
+        />
+        <Tab.Screen
+          name="Home"
+          component={City}
+          options={{
+            tabBarLabel: '',
+            tabBarIcon: () => <ArrowsSolid />,
+          }}
+        />
+        <Tab.Screen
+          name="Login"
+          component={Login}
+          options={{
+            tabBarLabel: '',
+            tabBarIcon: ({focused}) => (focused ? <Grid /> : <GridOutline />),
+          }}
+        />
+      </Tab.Navigator>
+    </>
   );
 };
 

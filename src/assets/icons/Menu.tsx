@@ -1,19 +1,36 @@
 import * as React from 'react';
-import {SvgCss} from 'react-native-svg';
+import Svg, {Path} from 'react-native-svg';
 
-const xml = `
-<svg
-  aria-hidden="true"
-  focusable="false"
-  data-prefix="fas"
-  data-icon="bars"
-  class="svg-inline--fa fa-bars fa-w-14"
-  role="img"
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 448 512">
-  <path
-    fill="black"
-    d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path>
-</svg>`;
+const Menu = ({color}: any) => {
+  return (
+    <Svg
+      aria-hidden="true"
+      data-prefix="fas"
+      data-icon="bars"
+      viewBox="0 0 448 512">
+      <Path
+        fill={color}
+        d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
+      />
+    </Svg>
+  );
+};
 
-export default () => <SvgCss xml={xml} />;
+export default Menu;
+
+// const xml = `
+// <svg
+//   aria-hidden="true"
+//   focusable="false"
+//   data-prefix="fas"
+//   data-icon="bars"
+//   class="svg-inline--fa fa-bars fa-w-14"
+//   role="img"
+//   xmlns="http://www.w3.org/2000/svg"
+//   viewBox="0 0 448 512">
+//   <path
+//     fill={color}
+//     d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path>
+// </svg>`;
+//
+// export default (color: any) => <SvgCss xml={xml} color={color} />;
