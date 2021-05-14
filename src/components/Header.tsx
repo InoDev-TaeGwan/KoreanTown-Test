@@ -4,6 +4,7 @@ import HeaderIcon from '../assets/icons/HeaderIcon';
 import Menu from '../assets/icons/Menu';
 import SearchIcon from '../assets/icons/SearchIcon';
 import BellIcon from '../assets/icons/BellIcon';
+import Dropdown from './Dropdown';
 
 const Container = styled.View`
   flex-direction: row;
@@ -48,6 +49,7 @@ const Header: VFC<Props> = ({main, magazine}) => {
             <Icon>
               <Menu color={'#fff'} />
             </Icon>
+            <Dropdown />
           </IconContainer>
           <IconContainer>
             {/* eslint-disable-next-line react-native/no-inline-styles */}

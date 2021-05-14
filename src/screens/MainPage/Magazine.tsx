@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/native';
-import {Text, Image, View} from 'react-native';
+import {Image} from 'react-native';
 import Header from '../../components/Header';
 import images from '../../assets/images/BerlinBG.jpg';
 import Layout from '../../components/Layout';
@@ -12,12 +12,12 @@ const Container = styled.ImageBackground`
 const MainHeader = styled.View`
   flex: 1;
   justify-content: center;
-  border: 1px solid red;
-  margin-top: 35px;
+  //border: 1px solid red;
+  margin-top: 35px; // ios 에서 만 적용하게 만들 것.
 `;
 const MainBody = styled.View`
   flex: 10;
-  border: 1px solid blue;
+  //border: 1px solid blue;
 `;
 const ContentBox = styled.View`
   margin: 50px 0 0 20px;
@@ -72,7 +72,7 @@ const Magazine = () => {
         <MainBody>
           <ContentBox>
             <MagazineTitle>
-              <Title>LA에서 즐기는</Title>
+              <Title>Berlin에서 즐기는</Title>
               <Title>한옥 카페</Title>
             </MagazineTitle>
             <HashTagContainer>
@@ -85,7 +85,7 @@ const Magazine = () => {
               <Icon>
                 <MapMarker color="#fff" />
               </Icon>
-              <SpotName>LA</SpotName>
+              <SpotName>Berlin</SpotName>
             </SpotContainer>
           </ContentBox>
         </MainBody>
