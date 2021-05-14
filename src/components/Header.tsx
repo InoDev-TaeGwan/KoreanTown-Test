@@ -23,9 +23,10 @@ const Icon = styled.View`
 interface Props {
   main?: boolean;
   magazine?: boolean;
+  sns?: boolean;
 }
 
-const Header: VFC<Props> = ({main, magazine}) => {
+const Header: VFC<Props> = ({main, magazine, sns}) => {
   return (
     <>
       {main && (
@@ -49,7 +50,7 @@ const Header: VFC<Props> = ({main, magazine}) => {
             <Icon>
               <Menu color={'#fff'} />
             </Icon>
-            <Dropdown />
+            <Dropdown color={'#fff'} />
           </IconContainer>
           <IconContainer>
             {/* eslint-disable-next-line react-native/no-inline-styles */}
@@ -58,6 +59,25 @@ const Header: VFC<Props> = ({main, magazine}) => {
             </Icon>
             <Icon>
               <BellIcon color={'#fff'} />
+            </Icon>
+          </IconContainer>
+        </Container>
+      )}
+      {sns && (
+        <Container>
+          <IconContainer>
+            <Icon>
+              <Menu color={'black'} />
+            </Icon>
+            <Dropdown />
+          </IconContainer>
+          <IconContainer>
+            {/* eslint-disable-next-line react-native/no-inline-styles */}
+            <Icon style={{marginRight: 20}}>
+              <SearchIcon color={'black'} />
+            </Icon>
+            <Icon>
+              <BellIcon color={'black'} />
             </Icon>
           </IconContainer>
         </Container>

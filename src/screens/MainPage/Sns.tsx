@@ -1,19 +1,37 @@
 import React from 'react';
 import styled from '@emotion/native';
 import {Text} from 'react-native';
+import Layout from '../../components/Layout';
+import Header from '../../components/Header';
 
-const BoxGreen = styled.View`
+const NoneColor = styled.View`
   flex: 1;
+  background-color: #fff;
+`;
+const MainHeader = styled.View`
+  flex: 1;
+  justify-content: center;
+  border: 1px solid red;
+`;
+const MainBody = styled.View`
+  flex: 10;
   align-items: center;
   justify-content: center;
-  background-color: green;
+  border: 1px solid blue;
 `;
 
 const Sns = () => {
   return (
-    <BoxGreen>
-      <Text>Sns</Text>
-    </BoxGreen>
+    <Layout>
+      <NoneColor>
+        <MainHeader>
+          <Header sns />
+        </MainHeader>
+        <MainBody>
+          <Text>SNS</Text>
+        </MainBody>
+      </NoneColor>
+    </Layout>
   );
 };
 

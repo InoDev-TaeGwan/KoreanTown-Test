@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/native';
 import Menu from '../assets/icons/Menu';
 import {Platform, StyleSheet} from 'react-native';
+import {GridOutline} from '../assets/icons';
 
 const Container = styled.View`
   flex-direction: row;
@@ -42,7 +43,7 @@ const BottomNavigation = () => {
       </IconContainer>
       <IconContainer>
         <Icon>
-          <Menu color={'#fff'} />
+          <GridOutline />
         </Icon>
       </IconContainer>
       <IconContainer>

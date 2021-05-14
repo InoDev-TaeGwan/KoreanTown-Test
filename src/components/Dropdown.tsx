@@ -1,9 +1,13 @@
-import React, {useState} from 'react';
+import React, {FC, useState} from 'react';
 
 import DropDownPicker from 'react-native-dropdown-picker';
 import {View} from 'react-native';
 
-const Dropdown = () => {
+interface Props {
+  color?: any;
+}
+
+const Dropdown: FC<Props> = ({color}) => {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
   const [items, setItems] = useState([
@@ -24,7 +28,7 @@ const Dropdown = () => {
         showTickIcon={false}
         textStyle={{
           // 리스트 글자 스타일
-          color: '#fff',
+          color: `${color}`,
           fontWeight: 'bold',
         }}
         dropDownContainerStyle={{

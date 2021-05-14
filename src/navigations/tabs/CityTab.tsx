@@ -38,7 +38,8 @@ const CityTab = () => {
           component={Login}
           options={{
             tabBarLabel: '',
-            tabBarIcon: ({focused}) => (focused ? <Grid /> : <GridOutline />),
+            tabBarIcon: ({focused}) =>
+              focused ? <Grid /> : <GridOutline color={'black'} />,
           }}
         />
       </Tab.Navigator>
