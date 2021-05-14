@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from '@emotion/native';
-import {Image} from 'react-native';
+import {Image, Platform, StyleSheet} from 'react-native';
 import Header from '../../components/Header';
 import images from '../../assets/images/BerlinBG.jpg';
 import Layout from '../../components/Layout';
 import MapMarker from '../../assets/icons/MapMarker';
+import BottomNavigation from '../../components/BottomNavigation';
 
 const Container = styled.ImageBackground`
   flex: 1;
@@ -12,12 +13,21 @@ const Container = styled.ImageBackground`
 const MainHeader = styled.View`
   flex: 1;
   justify-content: center;
-  //border: 1px solid red;
-  margin-top: 35px; // ios 에서 만 적용하게 만들 것.
+  //margin-top: 35px; // ios 에서 만 적용하게 만들 것.
 `;
+
+const styles = StyleSheet.create({
+  headerIos: {
+    ...Platform.select({
+      ios: {
+        marginTop: 35,
+      },
+    }),
+  },
+});
+
 const MainBody = styled.View`
   flex: 10;
-  //border: 1px solid blue;
 `;
 const ContentBox = styled.View`
   margin: 50px 0 0 20px;
@@ -59,6 +69,10 @@ const SpotName = styled.Text`
   font-size: 15px;
   font-weight: bold;
 `;
+const Bottom = styled.View`
+  flex: 1;
+  justify-content: center;
+`;
 
 const image = Image.resolveAssetSource(images).uri; // 백그라운드 이미지 설정
 
@@ -66,7 +80,7 @@ const Magazine = () => {
   return (
     <Layout notchNone>
       <Container source={{uri: image}}>
-        <MainHeader>
+        <MainHeader style={styles.headerIos}>
           <Header magazine />
         </MainHeader>
         <MainBody>
@@ -89,6 +103,9 @@ const Magazine = () => {
             </SpotContainer>
           </ContentBox>
         </MainBody>
+        <Bottom>
+          <BottomNavigation />
+        </Bottom>
       </Container>
     </Layout>
   );
