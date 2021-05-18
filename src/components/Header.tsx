@@ -5,6 +5,8 @@ import Menu from '../assets/icons/Menu';
 import SearchIcon from '../assets/icons/SearchIcon';
 import BellIcon from '../assets/icons/BellIcon';
 import Dropdown from './Dropdown';
+import UserProfileImage from './UserProfileImage';
+import profile from '../assets/images/taeyeon.jpg';
 
 const Container = styled.View`
   flex-direction: row;
@@ -38,9 +40,15 @@ const Header: VFC<Props> = ({main, magazine, sns}) => {
           </IconContainer>
           <IconContainer>
             {/* eslint-disable-next-line react-native/no-inline-styles */}
-            <Icon style={{width: 50, height: 50}}>
-              <HeaderIcon />
-            </Icon>
+            {/*<Icon style={{width: 50, height: 50}}>*/}
+            {/*  <HeaderIcon />*/}
+            {/*</Icon>*/}
+            <UserProfileImage
+              width={50}
+              height={50}
+              source={require('../assets/images/taeyeon.jpg')}
+              borderRadius={25}
+            />
           </IconContainer>
         </Container>
       )}
@@ -69,7 +77,7 @@ const Header: VFC<Props> = ({main, magazine, sns}) => {
             <Icon>
               <Menu color={'black'} />
             </Icon>
-            <Dropdown />
+            <Dropdown color={'black'} />
           </IconContainer>
           <IconContainer>
             {/* eslint-disable-next-line react-native/no-inline-styles */}

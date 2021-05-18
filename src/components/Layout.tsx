@@ -6,6 +6,7 @@ import {StatusBar} from 'react-native';
 
 const NoChiContainer = styled.SafeAreaView`
   flex: 1;
+  background-color: #fff;
 `;
 const Container = styled.View`
   flex: 1;

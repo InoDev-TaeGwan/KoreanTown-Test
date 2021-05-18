@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/native';
-import {snsList} from '../../utils/db';
+import {snsHashTagList} from '../../utils/db';
 
 const Container = styled.View`
   border-bottom-width: 1px;
@@ -12,7 +12,6 @@ const Scroll = styled.ScrollView`
   padding: 10px 10px;
 `;
 
-// @ts-ignore
 const HashTagItem = styled.View`
   width: 70px;
   height: 70px;
@@ -22,7 +21,7 @@ const HashTagItem = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
-  background-color: ${props => props.active && 'yellow'};
+  background-color: ${(props: any) => props.active && '#df8d6f'};
 `;
 
 const HashTagName = styled.Text`
@@ -38,7 +37,7 @@ const HashTag = () => {
           showsVerticalScrollIndicator 는 세로 스크롤바
         */}
 
-        {snsList.map(sns => (
+        {snsHashTagList.map(sns => (
           <HashTagItem key={sns.id} active={sns.active}>
             <HashTagName>{`#${sns.hashtag}`}</HashTagName>
           </HashTagItem>

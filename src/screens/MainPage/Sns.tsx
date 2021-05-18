@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from '@emotion/native';
-import {Text} from 'react-native';
 import Layout from '../../components/Layout';
 import Header from '../../components/Header';
 import HashTag from '../../components/sns/HashTag';
+import RangeSlider from '../../components/sns/RangeSlider';
+import Post from '../../components/sns/Post';
+import {snsPostlist} from '../../utils/db';
 
 const NoneColor = styled.View`
   flex: 1;
@@ -14,12 +16,13 @@ const MainHeader = styled.View`
   justify-content: center;
   //border: 1px solid red;
 `;
-const MainBody = styled.View`
+const MainBody = styled.ScrollView`
   flex: 10;
-  align-items: center;
-  justify-content: center;
-  //border: 1px solid blue;
+  //padding: 10px 20px;
+  background-color: #999;
 `;
+
+// console.log(snsPostlist.map(list => list.image));
 
 const Sns = () => {
   return (
@@ -29,8 +32,16 @@ const Sns = () => {
           <Header sns />
         </MainHeader>
         <HashTag />
+        <RangeSlider />
         <MainBody>
-          <Text>SNS</Text>
+          {snsPostlist.map(list => (
+            <Post
+              key={list.id}
+              nickname={list.nickName}
+              spot={list.spot}
+              // PostImg={list.image}
+            />
+          ))}
         </MainBody>
       </NoneColor>
     </Layout>

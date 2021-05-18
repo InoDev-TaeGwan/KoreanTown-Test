@@ -1,4 +1,4 @@
-export const snsList = [
+export const snsHashTagList = [
   {
     id: '01',
     hashtag: '혐한',
@@ -48,5 +48,56 @@ export const snsList = [
     id: '10',
     hashtag: '주말',
     active: false,
+  },
+];
+
+export const snsPostlist = [
+  {
+    id: '01',
+    nickName: '태연',
+    spot: 'Rue Wilfrid Laurier',
+    image: [
+      {
+        url: '../../assets/images/BerlinBg.jpg',
+      },
+      {
+        url: '../../assets/images/BerlinBg.jpg',
+      },
+      {
+        url: '../../assets/images/BerlinBg.jpg',
+      },
+    ],
+  },
+  {
+    id: '02',
+    nickName: '태연이다',
+    spot: 'Rue Wilfrid Laurier',
+    image: [
+      {
+        url: '../../assets/images/BerlinBG.jpg',
+      },
+      {
+        url: '../../assets/images/BerlinBG.jpg',
+      },
+      {
+        url: '../../assets/images/BerlinBG.jpg',
+      },
+    ],
+  },
+  {
+    id: '03',
+    nickName: '태연이지',
+    spot: 'Rue Wilfrid Laurier',
+    image: [
+      {
+        url: '../assets/images/BerlinBG.jpg',
+      },
+      {
+        url: '../assets/images/BerlinBG.jpg',
+      },
+      {
+        url: '../assets/images/BerlinBG.jpg',
+      },
+    ],
   },
 ];
