@@ -1,4 +1,4 @@
-import React, {FC, useCallback, useState} from 'react';
+import React, {FC, memo, useCallback, useState} from 'react';
 import styled from '@emotion/native';
 import UserProfileImage from '../UserProfileImage';
 import BookmarkSolid from '../../assets/icons/BookmarkSolid';
@@ -36,35 +36,35 @@ const BookMark = styled.TouchableOpacity`
 interface Props {
   nickname: string;
   spot: string;
+  handleBookmark: any;
+  bookmark: boolean;
 }
 
-const PostHeader: FC<Props> = ({nickname, spot}) => {
-  const [check, setCheck] = useState(false);
-  const handleBookmark = useCallback(() => {
-    setCheck(!check);
-  }, [check]);
-  return (
-    <Container>
-      <UserInfo>
-        <UserProfileImage
-          width={60}
-          height={60}
-          source={require('../../assets/images/taeyeon.jpg')}
-          borderRadius={30}
-        />
-        <ContentBox>
-          <NickName>{nickname}</NickName>
-          <TimeSpot>
-            <Time>5분 전</Time>
-            <Spot>{spot}</Spot>
-          </TimeSpot>
-        </ContentBox>
-      </UserInfo>
-      <BookMark onPress={handleBookmark}>
-        {check ? <BookmarkSolid color={'#df8d6f'} /> : <BookmarkRegular />}
-      </BookMark>
-    </Container>
-  );
-};
+const PostHeader: FC<Props> = memo(
+  ({nickname, spot, handleBookmark, bookmark}) => {
+    return (
+      <Container>
+        <UserInfo>
+          <UserProfileImage
+            width={60}
+            height={60}
+            source={require('../../assets/images/taeyeon.jpg')}
+            borderRadius={30}
+          />
+          <ContentBox>
+            <NickName>{nickname}</NickName>
+            <TimeSpot>
+              <Time>5분 전</Time>
+              <Spot>{spot}</Spot>
+            </TimeSpot>
+          </ContentBox>
+        </UserInfo>
+        <BookMark onPress={handleBookmark}>
+          {bookmark ? <BookmarkSolid color={'#df8d6f'} /> : <BookmarkRegular />}
+        </BookMark>
+      </Container>
+    );
+  },
+);
 
 export default PostHeader;

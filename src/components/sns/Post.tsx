@@ -13,14 +13,22 @@ const Container = styled.View`
 interface Props {
   nickname: string;
   spot: string;
+  handleBookmark: any;
+  bookmark: boolean;
+  like: boolean;
 }
 
-const Post: FC<Props> = ({nickname, spot}) => {
+const Post: FC<Props> = ({nickname, spot, handleBookmark, bookmark, like}) => {
   return (
     <Container>
-      <PostHeader nickname={nickname} spot={spot} />
+      <PostHeader
+        nickname={nickname}
+        spot={spot}
+        handleBookmark={handleBookmark}
+        bookmark={bookmark}
+      />
       <PostContent />
-      <PostFooter />
+      <PostFooter like={like} />
     </Container>
   );
 };
