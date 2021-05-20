@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import styled from '@emotion/native';
 import {snsHashTagList} from '../../utils/db';
 
@@ -28,7 +28,7 @@ const HashTagName = styled.Text`
   font-weight: bold;
 `;
 
-const HashTag = () => {
+const HashTag = memo(() => {
   return (
     <Container>
       <Scroll horizontal={true} showsHorizontalScrollIndicator={false}>
@@ -45,6 +45,6 @@ const HashTag = () => {
       </Scroll>
     </Container>
   );
-};
+});
 
 export default HashTag;

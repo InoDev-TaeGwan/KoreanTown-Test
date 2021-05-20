@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import styled from '@emotion/native';
 import Layout from '../../components/Layout';
 import Header from '../../components/Header';
@@ -25,6 +25,8 @@ const MainBody = styled.ScrollView`
 // console.log(snsPostlist.map(list => list.image));
 
 const Sns = () => {
+  // const [check, setCheck] = useState(false);
+  const handleBookmark = useCallback(() => {}, []);
   return (
     <Layout>
       <NoneColor>
@@ -40,6 +42,9 @@ const Sns = () => {
               nickname={list.nickName}
               spot={list.spot}
               // PostImg={list.image}
+              handleBookmark={handleBookmark}
+              bookmark={list.bookmark}
+              like={list.like}
             />
           ))}
         </MainBody>

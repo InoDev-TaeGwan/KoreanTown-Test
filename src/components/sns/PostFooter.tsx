@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {FC} from 'react';
 import styled from '@emotion/native';
-import {Text} from 'react-native';
 import HeartRegular from '../../assets/icons/HeartRegular';
 import CommentRegular from '../../assets/icons/CommentRegular';
 import PaperPlaneRegular from '../../assets/icons/PaperPlaneRegular';
+import HeartSolid from '../../assets/icons/HeartSolid';
 
 const Container = styled.View`
   margin-top: 10px;
@@ -30,13 +30,15 @@ const CountText = styled.Text`
   margin-left: 10px;
 `;
 
-const PostFooter = () => {
+interface Props {
+  like: boolean;
+}
+
+const PostFooter: FC<Props> = ({like}) => {
   return (
     <Container>
       <ContentBox>
-        <Icon>
-          <HeartRegular />
-        </Icon>
+        <Icon>{like ? <HeartSolid /> : <HeartRegular />}</Icon>
         <Icon>
           <CommentRegular />
         </Icon>

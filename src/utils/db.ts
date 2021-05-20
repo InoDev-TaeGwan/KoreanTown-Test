@@ -56,6 +56,8 @@ export const snsPostlist = [
     id: '01',
     nickName: '태연',
     spot: 'Rue Wilfrid Laurier',
+    bookmark: true,
+    like: false,
     image: [
       {
         url: '../../assets/images/BerlinBg.jpg',
@@ -72,6 +74,8 @@ export const snsPostlist = [
     id: '02',
     nickName: '태연이다',
     spot: 'Rue Wilfrid Laurier',
+    bookmark: false,
+    like: true,
     image: [
       {
         url: '../../assets/images/BerlinBG.jpg',
@@ -88,6 +92,8 @@ export const snsPostlist = [
     id: '03',
     nickName: '태연이지',
     spot: 'Rue Wilfrid Laurier',
+    bookmark: true,
+    like: true,
     image: [
       {
         url: '../assets/images/BerlinBG.jpg',
