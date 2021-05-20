@@ -8,6 +8,7 @@ const Container = styled.View`
 `;
 const Text = styled.Text`
   margin-bottom: 20px;
+  line-height: 20px;
 `;
 
 const ImageContainer = styled.View`
@@ -60,7 +61,7 @@ const PostContent = () => {
           activeDot={
             <View
               style={{
-                backgroundColor: '#000',
+                backgroundColor: '#df8d6f',
                 width: 8,
                 height: 8,
                 borderRadius: 4,
