@@ -27,6 +27,7 @@ const MainBody = styled.ScrollView`
 const Sns = () => {
   // const [check, setCheck] = useState(false);
   const handleBookmark = useCallback(() => {}, []);
+  const handleLike = useCallback(() => {}, []);
   return (
     <Layout>
       <NoneColor>
@@ -45,6 +46,7 @@ const Sns = () => {
               handleBookmark={handleBookmark}
               bookmark={list.bookmark}
               like={list.like}
+              handleLike={handleLike}
             />
           ))}
         </MainBody>

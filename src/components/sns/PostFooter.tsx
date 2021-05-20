@@ -19,7 +19,7 @@ const ContentBox = styled.View`
   flex-direction: row;
 `;
 
-const Icon = styled.View`
+const Icon = styled.TouchableOpacity`
   width: 30px;
   height: 30px;
   margin-right: 20px;
@@ -32,13 +32,16 @@ const CountText = styled.Text`
 
 interface Props {
   like: boolean;
+  handleLike: () => void;
 }
 
-const PostFooter: FC<Props> = ({like}) => {
+const PostFooter: FC<Props> = ({like, handleLike}) => {
   return (
     <Container>
       <ContentBox>
-        <Icon>{like ? <HeartSolid /> : <HeartRegular />}</Icon>
+        <Icon onPress={handleLike}>
+          {like ? <HeartSolid /> : <HeartRegular />}
+        </Icon>
         <Icon>
           <CommentRegular />
         </Icon>

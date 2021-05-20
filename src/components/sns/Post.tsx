@@ -16,9 +16,17 @@ interface Props {
   handleBookmark: any;
   bookmark: boolean;
   like: boolean;
+  handleLike: () => void;
 }
 
-const Post: FC<Props> = ({nickname, spot, handleBookmark, bookmark, like}) => {
+const Post: FC<Props> = ({
+  nickname,
+  spot,
+  handleBookmark,
+  bookmark,
+  like,
+  handleLike,
+}) => {
   return (
     <Container>
       <PostHeader
@@ -28,7 +36,7 @@ const Post: FC<Props> = ({nickname, spot, handleBookmark, bookmark, like}) => {
         bookmark={bookmark}
       />
       <PostContent />
-      <PostFooter like={like} />
+      <PostFooter like={like} handleLike={handleLike} />
     </Container>
   );
 };

@@ -12,6 +12,9 @@ const ValueContainer = styled.View`
   flex-direction: row;
   justify-content: space-between;
 `;
+const RangeText = styled.Text`
+  color: #df8d6f;
+`;
 
 const RangeSlider = ({}) => {
   const [myValue, setMyValue] = useState(0);
@@ -19,12 +22,12 @@ const RangeSlider = ({}) => {
     <Container>
       <Text> {myValue} </Text>
       <ValueContainer>
-        <Text> 동갑</Text>
-        <Text> 5 </Text>
-        <Text> 10 </Text>
-        <Text> 15 </Text>
-        <Text> 20</Text>
-        <Text> 전체연령 </Text>
+        <RangeText> 동갑</RangeText>
+        <RangeText> 5 </RangeText>
+        <RangeText> 10 </RangeText>
+        <RangeText> 15 </RangeText>
+        <RangeText> 20</RangeText>
+        <RangeText> 전체연령 </RangeText>
       </ValueContainer>
       <Slider
         style={{height: 40}}
@@ -35,6 +38,7 @@ const RangeSlider = ({}) => {
         maximumTrackTintColor="yellow" // 값이 크면 빨간색
         minimumTrackTintColor="#df8d6f" // 값이 작으면 파란색
         step={1} // 1단위로 값이 변경
+        thumbTintColor="#df8d6f"
       />
     </Container>
   );
